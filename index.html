@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Irish Potato Famine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        #tabs {
+            background-color: #333;
+            color: white;
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        #tabs li {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        #tabs li.active {
+            background-color: #444;
+        }
+        #main, #about, #sources {
+            background-color: #f4f4f4;
+            flex: 2;
+            padding: 20px;
+        }
+        #main {
+            order: 1;
+        }
+        #about, #sources {
+            display: none;
+            order: 2;
+        }
+        #about.active, #sources.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul id="tabs">
+        <li class="active" onclick="showMain()">Main</li>
+        <li onclick="showAbout()">About</li>
+        <li onclick="showSources()">Sources</li>
+    </ul>
+    <div id="content">
+        <div id="main">
+            <h1>The Great Irish Potato Famine</h1>
+            <p>The Great Irish Potato Famine, also known as the Great Hunger, began in 1845 when a mold known as Phytophthora infestans (or P. infestans) caused a destructive plant disease that spread rapidly throughout Ireland. The infestation ruined up to one-half of the potato crop that year, and about three-quarters of the crop over the next seven years. Because the tenant farmers of Ireland—then ruled as a colony of Great Britain—relied heavily on the potato as a source of food, the infestation had a catastrophic impact on Ireland and its population.</p>
+            <p>The famine resulted in the death and emigration of millions of people, and had a profound impact on the country's demographics and economy. The population of Ireland dropped from about 8 million in 1841 to about 6 million in 1851, and did not recover to its pre-famine level until the 20th century.</p>
+        </div>
+        <div id="about">
+            <h2>About the Great Irish Potato Famine</h2>
+            <p>The Great Irish Potato Famine, also known as the Great Hunger, began in 1845 when a mold known as Phytophthora infestans (or P. infestans) caused a destructive plant disease that spread rapidly throughout Ireland. The infestation ruined up to one-half of the potato crop that year, and about three-quarters of the crop over the next seven years. Because the tenant farmers of Ireland—then ruled as a colony of Great Britain—relied heavily on the potato as a source of food, the infestation had a catastrophic impact on Ireland and its population.</p>
+            <p>The famine resulted in the death and emigration of millions of people, and had a profound impact on the country's demographics and economy. The population of Ireland dropped from about 8 million in 1841 to about 6 million in 1851, and did not recover to its pre-famine level until the 20th century.</p>
+        </div><div id="sources">
+            <h2>Sources</h2>
+            <ul>
+                <li><a href="https://www.history.com/topics/immigration/irish-potato-famine">History.com</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Great_Famine_(Ireland)">Wikipedia</a></li>
+                <li><a href="https://www.collegesidekick.com/study-docs/5046365">CollegeSidekick</a></li>
+                <li><a href="https://shs.hal.science/halshs-01147770/document">SHS</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function showMain() {
+            document.getElementById("main").style.display = "block";
+            document.getElementById("about").style.display = "none";
+            document.getElementById("sources").style.display = "none";
+            document.getElementById("tabs").querySelectorAll("li")[0].classList.add("active");
+        }
+        function showAbout() {
+            document.getElementById("main").style.display = "none";
+            document.getElementById("about").style.display = "block";
+            document.getElementById("sources").style.display = "none";
+            document.getElementById("tabs").querySelectorAll("li")[1].classList.add("active");
+        }
+        function showSources() {
+            document.getElementById("main").style.display = "none";
+            document.getElementById("about").style.display = "none";
+            document.getElementById("sources").style.display = "block";
+            document.getElementById("tabs").querySelectorAll("li")[2].classList.add("active");
+        }
+    </script>
+</body>
+</html>
